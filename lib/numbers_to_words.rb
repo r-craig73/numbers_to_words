@@ -1,18 +1,20 @@
-class Numbers
-  def iniialize(number)
-    @number = number
+class Counter
 
+  def initialize(input)
+    @input = input
   end
 
-def words
+  def words
+  words = { 0 => "zero" }
 
-#add Hash here
-words = Hash.new()
-words = {0 => "zero", 1 => "one"}
+  # output = ""
+  new_number = @input
+    if new_number == 0
+      words.fetch(0)
+#binding.pry
+    end
+    # output
 
-
-
-
-
-
+  end
+# binding.pry
 end
