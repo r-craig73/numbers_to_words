@@ -30,29 +30,40 @@ class Counter
 
     new_number = @input
 
+    # def number_digits
+    #   Math.log10(new_number).to_i + 1
+    # end
+
     if new_number.zero?
       single_digits.fetch(0)
-    elsif Math.log10(new_number).to_i + 1 == 1
-      single_digits.fetch(new_number)
-    elsif Math.log10(new_number).to_i + 1 == 2
-      # split number into integer array
+    elsif Math.log10(new_number).to_i + 1 == 3
       split_number = new_number.to_s.split('')
-      # first check if the number is in the teens
+      if (split_number.at(1) == '0') & (split_number.last == '0')
+        hundreds = split_number.first.to_i * 100
+        three_digits.fetch(hundreds)
+      elsif split_number.last == '0'
+        hundreds = split.number.first.to_i * 100
+        tens = split_number.at(1).to_i * 10
+        three_digits.fetch(hundreds) + ' ' + two_digits.fetch(tens)
+      elsif (split_number.second != '1') & (split_number.last != '0')
+        hundreds = split.number.first.to_i * 100
+        tens = split_number.at(1).to_i * 10
+        ones = split_number.last.to_i
+        three_digits.fetch(hundreds) + ' ' + two_digits.fetch(tens) + ' ' + single_digits.fetch(ones)
+      end
+    elsif Math.log10(new_number).to_i + 1 == 2
+      split_number = new_number.to_s.split('')
       if (split_number.first == '1') & (split_number.last != '0')
         ten_digits.fetch(new_number)
       elsif split_number.last == '0'
-        # check if the number is in the ten's (10, 20, 30...90)
         two_digits.fetch(new_number)
       elsif (split_number.first != '1') & (split_number.last != '0')
-        # split first and last number to combine 'two_digits' + 'single_digits'
         tens = split_number.first.to_i * 10
         ones = split_number.last.to_i
         two_digits.fetch(tens) + ' ' + single_digits.fetch(ones)
       end
+    elsif Math.log10(new_number).to_i + 1 == 1
+      single_digits.fetch(new_number)
     end
-
-
-
-
   end
 end
