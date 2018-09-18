@@ -27,6 +27,7 @@
 5. The method returns the string 'ninety nine' when the number is 99.
   * input: input = Counter.new(99)
   * output: expect(input.words).to(eq('ninety nine'))
+6. Adding another level to count 0->999 (coming soon) [or up to 10 specs]
 
 ### Rspec results
 ![alt-text](img/rspec-screenshot.png "Screenshot Rspec results, 5 specs passing")
