@@ -1,25 +1,69 @@
-class Counter
+require('pry')
 
+class Counter
   def initialize(input)
     @input = input
   end
 
   def words
-    words = {0 => "zero", 1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6 => "six", 7 => "seven", 8 => "eight", 9 => "nine"}
+    single_digits = {
+      0 => 'zero',
+      1 => 'one',
+      2 => 'two',
+      3 => 'three',
+      4 => 'four',
+      5 => 'five',
+      6 => 'six',
+      7 => 'seven',
+      8 => 'eight',
+      9 => 'nine'
+    }
 
-    # output = ""
+    ten_digits = {
+      11 => 'eleven',
+      12 => 'twelve',
+      13 => 'thirteen',
+      14 => 'fourteen',
+      15 => 'fifteen',
+      16 => 'sixteen',
+      17 => 'seventeen',
+      18 => 'eighteen',
+      19 => 'nineteen'
+    }
+
+    two_digits = {
+      10 => 'ten',
+      20 => 'twenty',
+      30 => 'thirty',
+      40 => 'forty',
+      50 => 'fifty',
+      60 => 'sixty',
+      70 => 'seventy',
+      80 => 'eighty',
+      90 => 'ninety'
+    }
+
     new_number = @input
-    x = 0
-    if new_number == 0
-        words.fetch(0)
-    # else
-    #   low_numbers = (1..9)
-    #   low_numbers.each() do |number|
-    #     if new_number == low_numbers
-    #     words.fetch(number)
-    #     end
-    end
 
+    if new_number.zero?
+      single_digits.fetch(0)
+    elsif Math.log10(new_number).to_i + 1 == 1
+      single_digits.fetch(new_number)
+    elsif Math.log10(new_number).to_i + 1 == 2
+      # split number into integer array
+      split_number = new_number.to_s.split('')
+      # first check if the number is in the teens
+      if (split_number.first == '1') & (split_number.last != '0')
+        ten_digits.fetch(new_number)
+      elsif split_number.last == '0'
+        # check if the number is in the ten's (10, 20, 30...90)
+        two_digits.fetch(new_number)
+      elsif (split_number.first != '1') & (split_number.last != '0')
+        # split first and last number to combine 'two_digits' + 'single_digits'
+        tens = split_number.first.to_i * 10
+        ones = split_number.last.to_i
+        two_digits.fetch(tens) + ' ' + single_digits.fetch(ones)
+      end
+    end
   end
-#binding.pry
 end
