@@ -23,8 +23,13 @@ describe('words') do
     expect(input.words).to(eq('thirty'))
   end
 
-  it('returns "ninety eight" when the number is 99') do
+  it('returns "ninety nine" when the number is 99') do
     input = Counter.new(99)
     expect(input.words).to(eq('ninety nine'))
+  end
+
+  it('returns "one hundred" when the number is 100') do
+    input = Counter.new(100)
+    expect(input.words).to(eq('one hundred'))
   end
 end
