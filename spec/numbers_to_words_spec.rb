@@ -33,6 +33,11 @@ describe('words') do
     expect(input.words).to(eq('one hundred'))
   end
 
+  it('returns "two hundred nineteen" when the number is 219') do
+    input = Counter.new(219)
+    expect(input.words).to(eq('two hundred nineteen'))
+  end
+
   it('returns "four hundred twenty" when the number is 420') do
     input = Counter.new(420)
     expect(input.words).to(eq('four hundred twenty'))
