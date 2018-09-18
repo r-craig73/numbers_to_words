@@ -42,11 +42,11 @@ class Counter
         hundreds = split_number.first.to_i * 100
         three_digits.fetch(hundreds)
       elsif split_number.last == '0'
-        hundreds = split.number.first.to_i * 100
+        hundreds = split_number.first.to_i * 100
         tens = split_number.at(1).to_i * 10
         three_digits.fetch(hundreds) + ' ' + two_digits.fetch(tens)
-      elsif (split_number.second != '1') & (split_number.last != '0')
-        hundreds = split.number.first.to_i * 100
+      elsif (split_number.at(1) != '1') & (split_number.last != '0')
+        hundreds = split_number.first.to_i * 100
         tens = split_number.at(1).to_i * 10
         ones = split_number.last.to_i
         three_digits.fetch(hundreds) + ' ' + two_digits.fetch(tens) + ' ' + single_digits.fetch(ones)
