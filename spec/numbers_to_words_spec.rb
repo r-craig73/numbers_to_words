@@ -47,4 +47,9 @@ describe('words') do
     input = Counter.new(999)
     expect(input.words).to(eq('nine hundred ninety nine'))
   end
+
+  it('returns "one thousand" when the number is 10000') do
+    input = Counter.new(1000)
+    expect(input.words).to(eq('one thousand'))
+  end
 end
