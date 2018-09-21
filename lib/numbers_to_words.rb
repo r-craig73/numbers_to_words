@@ -44,6 +44,10 @@ class Counter
       if (split_number.at(1) == '0') & (split_number.at(2) == '0') & (split_number.last == '0')
         thousands = split_number.first.to_i * 1000
         four_digits.fetch(thousands)
+      elsif (split_number.at(1) != '0') & (split_number.at(2) == '0') & (split_number.last == '0')
+        thousands = split_number.first.to_i * 1000
+        hundreds = split_number.at(1).to_i * 100
+        four_digits.fetch(thousands) + ', ' + three_digits.fetch(hundreds)
       elsif (split_number.at(1) != '0') & (split_number.at(2) != '1') & (split_number.last == '0')
         thousands = split_number.first.to_i * 1000
         hundreds = split_number.at(1).to_i * 100
