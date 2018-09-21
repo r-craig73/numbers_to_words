@@ -52,4 +52,9 @@ describe('words') do
     input = Counter.new(1000)
     expect(input.words).to(eq('one thousand'))
   end
+
+  it('returns "six thousand, four hundred twenty" when the number is 6420') do
+    input = Counter.new(6420)
+    expect(input.words).to(eq('six thousand, four hundred twenty'))
+  end
 end
