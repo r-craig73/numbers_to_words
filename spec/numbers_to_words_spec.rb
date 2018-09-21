@@ -67,4 +67,9 @@ describe('words') do
     input = Counter.new(4238)
     expect(input.words).to(eq('four thousand, two hundred thirty eight'))
   end
+
+  it('returns "seven thousand, six hundred" when the number is 7600') do
+    input = Counter.new(7600)
+    expect(input.words).to(eq('seven thousand, six hundred'))
+  end
 end
