@@ -42,18 +42,19 @@
 10. The method returns the string 'one thousand' when the number is 1000.
   * input = Counter.new(1000)
   * output: expect(input.words).to(eq('one thousand'))
-11. The method returns the string 'six thousand, four hundred twenty' when the number is 6420.
-  * input = Counter.new(6420)
-  * output: expect(input.words).to(eq('six thousand, four hundred twenty'))
-12. The method returns the string 'eight thousand, two hundred nineteen' when the number is 8219.
-  * input = Counter.new(8219)
-  * output: expect(input.words).to(eq('eight thousand, two hundred nineteen'))
-13. The method returns the string 'four thousand, two hundred thirty eight' when the number is 4238.
-  * input = Counter.new(4238)
-  * output: expect(input.words).to(eq('four thousand, two hundred thirty eight'))
-14. The method returns the string 'seven thousand, six hundred' when the number is 7500.
+11. The method returns the string 'seven thousand, six hundred' when the number is 7500.
   * input = Counter.new(7600)
   * output: expect(input.words).to(eq('seven thousand, six hundred'))
+12. The method returns the string 'six thousand, four hundred twenty' when the number is 6420.
+  * input = Counter.new(6420)
+  * output: expect(input.words).to(eq('six thousand, four hundred twenty'))
+13. The method returns the string 'eight thousand, two hundred nineteen' when the number is 8219.
+  * input = Counter.new(8219)
+  * output: expect(input.words).to(eq('eight thousand, two hundred nineteen'))
+14. The method returns the string 'four thousand, two hundred thirty eight' when the number is 4238.
+  * input = Counter.new(4238)
+  * output: expect(input.words).to(eq('four thousand, two hundred thirty eight'))
+
 
 
 ### Rspec results
