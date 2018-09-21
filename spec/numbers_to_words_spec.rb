@@ -48,9 +48,14 @@ describe('words') do
     expect(input.words).to(eq('nine hundred ninety nine'))
   end
 
-  it('returns "one thousand" when the number is 10000') do
+  it('returns "one thousand" when the number is 1000') do
     input = Counter.new(1000)
     expect(input.words).to(eq('one thousand'))
+  end
+
+  it('returns "seven thousand, six hundred" when the number is 7600') do
+    input = Counter.new(7600)
+    expect(input.words).to(eq('seven thousand, six hundred'))
   end
 
   it('returns "six thousand, four hundred twenty" when the number is 6420') do
@@ -66,10 +71,5 @@ describe('words') do
   it('returns "four thousand, two hundred thirty eight" when the number is 4238') do
     input = Counter.new(4238)
     expect(input.words).to(eq('four thousand, two hundred thirty eight'))
-  end
-
-  it('returns "seven thousand, six hundred" when the number is 7600') do
-    input = Counter.new(7600)
-    expect(input.words).to(eq('seven thousand, six hundred'))
   end
 end
