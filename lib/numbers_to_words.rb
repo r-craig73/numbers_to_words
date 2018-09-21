@@ -28,14 +28,23 @@ class Counter
       700 => 'seven hundred', 800 => 'eight hundred', 900 => 'nine hundred'
     }
 
-    new_number = @input
+    four_digits = {
+      1000 => 'one thousand', 2000 => 'two thousand', 3000 => 'three thousand',
+      4000 => 'four thousand', 5000 => 'five thousand', 6000 => 'six thousand',
+      7000 => 'seven thousand', 8000 => 'eight thousand',
+      9000 => 'nine thousand'
+    }
 
-    # def number_digits
-    #   Math.log10(new_number).to_i + 1
-    # end
+    new_number = @input
 
     if new_number.zero?
       single_digits.fetch(0)
+    elsif Math.log10(new_number).to_i + 1 == 4
+      split_number = new_number.to_s.split('')
+      if (split_number.at(1) == '0') & (split_number.at(2) == '0') & (split_number.at(3) == '0') & (split_number.last == '0')
+        thousands = split_number.first.to_i * 1000
+        four_digits.fetch(thousands)
+      end
     elsif Math.log10(new_number).to_i + 1 == 3
       split_number = new_number.to_s.split('')
       if (split_number.at(1) == '0') & (split_number.last == '0')
