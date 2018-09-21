@@ -55,21 +55,12 @@
   * input = Counter.new(4238)
   * output: expect(input.words).to(eq('four thousand, two hundred thirty eight'))
 
-
-
 ### Rspec results
-![alt-text](img/rspec-screenshot.png "Screenshot Rspec results, 11 specs passing")
+![alt-text](img/rspec-screenshot.png "Screenshot Rspec results, 14 specs passing")
 
 ### Using Visualize Ruby (https://visualize-ruby.herokuapp.com/), here are the screenshots for different digital branches.
 #### 4 Digits Branch
 ![alt-text](img/4-digits-branch.png "4 Digits Branch coming soon")
-
-#### 3 Digits Branch
-![alt-text](img/3-digits-branch.png "3 Digits Branch")
-
-#### 2 Digits & 1 Digit Branch
-![alt-text](img/2-digits-and-1-digit-branches.png "2 Digits and 1 Digit Branch")
-
 
 ## Setup/Installation Requirements
 ### Clone repository.
