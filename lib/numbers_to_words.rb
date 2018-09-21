@@ -49,6 +49,11 @@ class Counter
         hundreds = split_number.at(1).to_i * 100
         tens = split_number.at(2).to_i * 10
         four_digits.fetch(thousands) + ', ' + three_digits.fetch(hundreds) + ' ' + two_digits.fetch(tens)
+      elsif (split_number.at(1) != '0') & (split_number.at(2) == '1') & (split_number.last != '0')
+        thousands = split_number.first.to_i * 1000
+        hundreds = split_number.at(1).to_i * 100
+        tweens = split_number.at(2).to_i * 10 + split_number.last.to_i
+        four_digits.fetch(thousands) + ', ' + three_digits.fetch(hundreds) + ' ' + ten_digits.fetch(tweens)
       end
     elsif Math.log10(new_number).to_i + 1 == 3
       split_number = new_number.to_s.split('')
